@@ -9,19 +9,19 @@ import torch
 from loguru import logger
 from torch.nn.utils.rnn import pad_sequence
 
-from src import data_tools
+from src.data import datatools
 from src.settings import Settings
 
 
 def get_arabic(presets: Settings) -> Tuple[BaseDatastreamer, BaseDatastreamer]:
-    data_tools.get_file(
-        data_dir=presets.datadir,
+    datatools.get_file(
+        data_dir=presets.data_dir,
         filename=presets.trainfile,
         url=presets.trainurl,
         unzip=False,
     )
 
-    data_tools.get_file(
+    datatools.get_file(
         data_dir=presets.datadir,
         filename=presets.testfile,
         url=presets.testurl,
