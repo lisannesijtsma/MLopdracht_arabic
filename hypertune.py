@@ -25,13 +25,7 @@ def train(config: Dict, checkpoint_dir=None):
     function.
     """
     
-    # we lock the datadir to avoid parallel instances trying to
-    # access the datadir
-
     trainloader, validloader = datasets.get_arabic(presets)
-
-
-
 
     # we set up the metric
     accuracy = Accuracy()

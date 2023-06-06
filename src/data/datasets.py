@@ -15,7 +15,7 @@ from src.settings import Settings
 
 def get_arabic(presets: Settings) -> Tuple[BaseDatastreamer, BaseDatastreamer]:
     datatools.get_file(
-        data_dir=presets.data_dir,
+        data_dir=presets.datadir,
         filename=presets.trainfile,
         url=presets.trainurl,
         unzip=False,
