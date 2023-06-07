@@ -22,6 +22,7 @@ ray = "^2.4.0"
 tensorboard = "^2.13.0"
 hpbandster = "^0.7.4"
 configspace = "^0.6.1"
+torch-tb-profiler = "^0.4.1"
 
 [tool.poetry.group.dev.dependencies]
 black = "^23.3.0"
