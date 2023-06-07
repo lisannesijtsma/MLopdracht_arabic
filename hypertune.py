@@ -30,10 +30,10 @@ def train(config: Dict, checkpoint_dir=None):
     trainersettings = TrainerSettings(
         epochs=50,
         metrics=[accuracy],
-        logdir="modellog",
+        logdir=".",
         train_steps=len(trainloader),
         valid_steps=len(validloader),
-        tunewriter=["ray"],
+        tunewriter=["ray", "tensorboard"],
         scheduler_kwargs={"factor": 0.5, "patience": 5},
         earlystop_kwargs=None,
     )
@@ -70,6 +70,7 @@ if __name__ == "__main__":
     )
 
     bohb_search = TuneBOHB()
+    
     analysis = tune.run(
         train,
         config=config.dict(),
