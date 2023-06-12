@@ -56,7 +56,7 @@ if __name__ == "__main__":
     config = SearchSpace(
         input_size=13,
         output_size=20,
-        tune_dir=Path("models/ray").resolve(),
+        tune_dir=Path("models/arabic").resolve(),
         data_dir=Path("data/raw").resolve(),
     )
     reporter = CLIReporter()
@@ -77,7 +77,7 @@ if __name__ == "__main__":
         metric="test_loss",
         mode="min",
         progress_reporter=reporter,
-        local_dir=config.tune_dir,
+        local_dir=str(config.tune_dir),
         num_samples=50,
         search_alg=bohb_search,
         scheduler=bohb_hyperband,
